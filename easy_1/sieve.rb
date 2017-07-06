@@ -15,6 +15,7 @@ OUTPUT: array of primes
 
 class Sieve 
   def initialize(integer)
+  raise(ArgumentError, "There are no primes below 2!") if integer < 2
     @int = integer
     @integers_hash = (4..integer).reduce({}){|a,v| a[v] = 'P'; a}
   end
